@@ -14,9 +14,10 @@ export class SeasonListComponent implements OnInit {
   seasons: Season[];
   errorMessage: string;
   mode = "Observable";
-
+  token = localStorage.getItem('id_token');
+  
   constructor(
-    private seasonService: SeasonService
+    private seasonService: SeasonService,
   ) {}
 
   ngOnInit() {
