@@ -3,5 +3,7 @@
 <div>
   <span *ngFor="let season of seasons" class="list-group-item list-group-item-action">
       <h5 class="list-group-item-heading">Temporada: {{season.year}}</h5>
+      <a (click)="goToShow(season)" class="season-link">Show</a>
   </span>
+
 </div>
