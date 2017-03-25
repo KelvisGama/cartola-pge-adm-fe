@@ -16,4 +16,7 @@ export class SeasonService {
     return this.http.get(this.seasonsUrl)
                       .map((response: Response) => <Season[]>response.json())
   }
+  getSeason(id: number){
+    return this.http.get(this.seasonsUrl+"/"+id);
+  }
 }

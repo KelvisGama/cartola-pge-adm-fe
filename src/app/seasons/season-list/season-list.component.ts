@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeasonService } from '../season.service';
 import { Observable } from 'rxjs/Rx';
+import { Router } from '@angular/router';
 import { Season } from '../season';
 
 @Component({
@@ -15,9 +16,10 @@ export class SeasonListComponent implements OnInit {
   errorMessage: string;
   mode = "Observable";
   token = localStorage.getItem('id_token');
-  
+
   constructor(
     private seasonService: SeasonService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -31,6 +33,11 @@ export class SeasonListComponent implements OnInit {
           seasons => this.seasons = seasons,
           error => this.errorMessage = <any>error
         );
+  }
+
+  goToShow(season: Season): void {
+    let link = ['/seasons', season.id];
+    this.router.navigate(link);
   }
 
 }

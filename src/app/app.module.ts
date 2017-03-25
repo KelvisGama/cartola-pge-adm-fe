@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { SeasonService } from './seasons/season.service';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { AuthGuard } from './common/auth.guard';
+import { SeasonShowComponent } from './seasons/season-show/season-show.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AuthGuard } from './common/auth.guard';
     AppComponent,
     SeasonListComponent,
     LoginComponent,
+    SeasonShowComponent,
   ],
   imports: [
     BrowserModule,

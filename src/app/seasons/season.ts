@@ -1,3 +1,6 @@
-export interface Season {
-  year: number
+export class Season {
+  constructor (
+    public id?: number,
+    public year?: number
+  ){}
 }
