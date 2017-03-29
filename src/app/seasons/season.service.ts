@@ -6,7 +6,7 @@ import { Season } from './season';
 
 @Injectable()
 export class SeasonService {
-  private seasonsUrl = 'http://localhost:3000/seasons';
+  private seasonsUrl = 'http://localhost:3000/api/v1/seasons';
 
   constructor(
     private http: Http,

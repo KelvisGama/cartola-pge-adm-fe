@@ -19,7 +19,7 @@ export class SeasonShowComponent implements OnInit {
   response: string;
   api: string;
   jwtHelper: JwtHelper = new JwtHelper();
-  seasonsUrl = 'http://localhost:3000/seasons';
+  seasonsUrl = 'http://localhost:3000/api/v1/seasons';
 
   constructor(
     private route: ActivatedRoute,

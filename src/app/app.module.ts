@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http, RequestOptions } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 
@@ -12,10 +12,13 @@ import { SeasonListComponent } from './seasons/season-list/season-list.component
 import { LoginComponent } from './login/login.component';
 
 import { SeasonService } from './seasons/season.service';
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { AuthGuard } from './common/auth.guard';
 import { SeasonShowComponent } from './seasons/season-show/season-show.component';
 
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp( new AuthConfig({}), http, options);
+}
 
 @NgModule({
   declarations: [
@@ -35,8 +38,12 @@ import { SeasonShowComponent } from './seasons/season-show/season-show.component
   ],
   providers: [
     AuthGuard,
-    ...AUTH_PROVIDERS,
-    SeasonService
+    SeasonService,
+    {
+     provide: AuthHttp,
+     useFactory: authHttpServiceFactory,
+     deps: [ Http, RequestOptions ]
+   }
   ],
   bootstrap: [ AppComponent ]
 })
