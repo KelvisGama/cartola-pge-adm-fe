@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1> Lista de Jogadores </h1>
+    <button class="btn btn-primary">Novo Jogador</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 card-column">
+    <div
+      *ngFor="let player of players"
+      class="card card-season col-md-5"
+      disabled="true"
+      style= "display: inline-block"
+      [ngStyle]="{backgroundColor: player.active ? 'white' : '#d3d3d3'}"
+    >
+    <div class="card-block">
+      <h4 class="card-title">{{ player.name }}</h4>
+      <div *ngIf="player.active; else activateButtons">
+        <button class="btn btn-primary">Detalhes</button>
+        <button class="btn btn-primary">Editar</button>
+        <button class="btn btn-danger">Desativar</button>
+      </div>
+      <ng-template #activateButtons>
+        <button class="btn btn-success">Ativar</button>
+      </ng-template>
+    </div>
+  </div>
+  </div>
+</div>
