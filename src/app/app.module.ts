@@ -15,6 +15,9 @@ import { SeasonService } from './seasons/season.service';
 import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { AuthGuard } from './common/auth.guard';
 import { SeasonShowComponent } from './seasons/season-show/season-show.component';
+import { SeasonNewComponent } from './seasons/season-new/season-new.component';
+import { PlayerListComponent } from './players/player-list/player-list.component';
+import { TeamListComponent } from './teams/team-list/team-list.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp( new AuthConfig({}), http, options);
@@ -26,6 +29,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     SeasonListComponent,
     LoginComponent,
     SeasonShowComponent,
+    SeasonNewComponent,
+    PlayerListComponent,
+    TeamListComponent,
   ],
   imports: [
     BrowserModule,

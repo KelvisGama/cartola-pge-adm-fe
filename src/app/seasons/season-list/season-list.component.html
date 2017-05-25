@@ -1,9 +1,15 @@
-<h1> Temporadas </h1>
-
-<div>
-  <span *ngFor="let season of seasons" class="list-group-item list-group-item-action">
-      <h5 class="list-group-item-heading">Temporada: {{season.year}}</h5>
-      <a (click)="goToShow(season)" class="season-link">Show</a>
-  </span>
-
+<div class="row">
+  <div class="col-md-12">
+    <h1> Temporadas </h1>
+    <button class="btn btn-primary" routerLink="/app-season-new">Nova Temporada</button>
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let season of seasons" class="card card-season col-md-4 text-center">
+    <div class="card-block">
+      <h4 class="card-title">Ano: {{season.year}}</h4>
+      <button (click)="goToShow(season)" class="season-link btn btn-primary">Ver</button>
+      <button (click)="goToShow(season)" class="season-link btn btn-primary">Editar</button>
+    </div>
+  </div>
 </div>

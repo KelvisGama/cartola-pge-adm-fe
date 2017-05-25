@@ -1,12 +1,28 @@
-<nav class="navbar navbar-toggleable-md navbar-light" style="background-color: #F48753;">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">Cartola PGE</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a routerLink="/app-season-list" routerLinkActive="active" class="nav-item nav-link " href="#"> Temporadas</a>
-      <a class="nav-item nav-link" href="#"> Jogadores </a>
+      <a
+        routerLink="/app-season-list"
+        [routerLinkActive]="['active']"
+        class="nav-item nav-link">
+        Temporadas
+      </a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/app-player-list"
+        [routerLinkActive]="['active']">
+        Jogadores
+      </a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/app-team-list"
+        [routerLinkActive]="['active']">
+        Times
+      </a>
     </div>
   </div>
 </nav>

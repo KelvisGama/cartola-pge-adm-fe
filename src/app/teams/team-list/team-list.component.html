@@ -1,0 +1,9 @@
+<div
+  *ngFor="let team of teams"
+  class="card"
+>
+  <div class="card-block">
+    <h4 class="card-title">{{ team.name }}</h4>
+    <h6 class="card-subtitle">{{ team.player.name }}</h6>
+  </div>
+</div>
